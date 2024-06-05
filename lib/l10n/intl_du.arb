@@ -1,0 +1,21 @@
+{
+  "@@locale": "du",
+  "files": "Dateien",
+  "scanner": "Scanner",
+  "settings": "Die Einstellungen",
+  "profile": "Profil",
+  "main": "ober",
+  "recentFiles": "Aktuelle Dateien",
+  "favorites": "Favoriten",
+  "searchFilm": "Einen Film finden",
+  "recentlyYourFiles": "Hier werden Ihre Dateien angezeigt, mit denen Sie kürzlich gearbeitet haben",
+  "favoriteYourFiles": "Ihre Lieblingsdateien werden hier angezeigt",
+  "pointsWatchingVideo": "Sammeln Sie Punkte, indem Sie sich das Werbevideo ansehen!",
+  "watch": "Suchen",
+  "search": "Suche",
+  "favourites": "Favourites",
+  "serials": "Serien",
+  "donFilms": "Sie haben keine gespeicherten Filme",
+  "typingHeroName": "Typing the hero's name",
+  "changePhoto": "Foto ändern"
+}

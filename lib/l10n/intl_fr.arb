@@ -1,0 +1,20 @@
+{
+  "@@locale": "fr",
+  "files": "Fichiers",
+  "scanner": "Scanner",
+  "settings": "Réglages",
+  "profile": "Profil",
+  "main": "cardinal",
+  "recentFiles": "Fichiers récents",
+  "favorites": "Favoris",
+  "searchFilm": "Trouver un film",
+  "recentlyYourFiles": "Vos fichiers avec lesquels vous avez travaillé récemment apparaîtront ici",
+  "favoriteYourFiles": "Vos fichiers favoris apparaîtront ici",
+  "pointsWatchingVideo": "Gagnez des points en regardant la vidéo promotionnelle!",
+  "watch": "Regarder",
+  "search": "Recherche",
+  "favourites": "Favourites",
+  "typingHeroName": "Typing the hero's name",
+  "donFilms": "Vous n'avez pas de films enregistrés",
+  "changePhoto": "Changer la photo"
+}

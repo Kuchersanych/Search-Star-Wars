@@ -1,0 +1,6 @@
+"CFBundleDisplayName" = "Scan Me PDF";
+"NSCameraUsageDescription" = "Permission to access the device's camera will allow you to correctly use camera data to upload photos to the user's profile using the device's camera.";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Enabling location services allows you to receive information about your location and, based on this data, offer you current addresses.";
+"NSLocationWhenInUseUsageDescription" = "Enabling location services allows you to receive information about your location and, based on this data, offer you current addresses.";
+"NSPhotoLibraryUsageDescription" = "Allow gallery access to upload photos to user profile using device gallery.";
+"NSMicrophoneUsageDescription" = "Permission to access the device's microphone will allow you to correctly use camera data to upload photos to the user's profile using the device's camera.";
