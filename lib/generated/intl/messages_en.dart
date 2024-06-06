@@ -23,8 +23,6 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "changePhoto": MessageLookupByLibrary.simpleMessage("Change photo"),
-        "donFilms": MessageLookupByLibrary.simpleMessage(
-            "You don\'t have any saved movies"),
         "favoriteYourFiles": MessageLookupByLibrary.simpleMessage(
             "Your favorite files will appear here"),
         "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),

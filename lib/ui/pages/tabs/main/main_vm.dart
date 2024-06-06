@@ -106,11 +106,11 @@ class MainVM extends VMUtils<MainState> {
     print(state.foundStarWarrior);
   }
 
-  // void saveFilm(FilmData film) {
-  //   if (film.type == 'movie') {
-  //     _mainService.saveFilm(film);
-  //   } else {
-  //     _mainService.saveSerial(film);
-  //   }
-  // }
+  void addStarWarrior(StarWarrior starWarrior) {
+    _mainService.addStarWarrior(starWarrior);
+  }
+
+  void getAllFavorites() {
+    _mainService.getAllFavorites();
+  }
 }

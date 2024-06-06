@@ -10,7 +10,7 @@ import 'package:search_star_warriors/ui/theme/app_padding.dart';
 import 'package:search_star_warriors/ui/theme/src/theme_extension.dart';
 import 'package:search_star_warriors/util/extensions/context_extensions.dart';
 
-import 'widgets/film_card.dart';
+import 'widgets/star_warrior_card.dart';
 
 class MainPage extends StatelessWidget {
   /// Пример описания виджета
@@ -23,7 +23,7 @@ class MainPage extends StatelessWidget {
 
     final s = context.s;
 
-    final List<StarWarrior> foundFilms = state.foundStarWarrior;
+    final List<StarWarrior> foundStarWarrior = state.foundStarWarrior;
 
     return ScaffoldManager(
       status: ScaffoldManagerStatus.loaded,
@@ -38,7 +38,6 @@ class MainPage extends StatelessWidget {
                 visible: state.foundStarWarrior.isNotEmpty,
                 child: Text(
                   'Search Star Warriors',
-
                   style: context.mBlue24(fontSize: 30.a, fontWeight: FontWeight.w600),
                 ),
               ),
@@ -46,34 +45,29 @@ class MainPage extends StatelessWidget {
                 controller: model.searchController,
               ),
               Column(
-                  // children: foundFilms.isNotEmpty
-                  //     ? foundFilms
-                  //         .map((item) =>
-                  //
-                  //
-                  //   //   FilmCard(
-                  //   // addFilm: () => model.saveFilm(item),
-                  //   //             name: item.name ?? '',
-                  //   //             year: item.year,
-                  //   //             rating: item.rating!.kp,
-                  //   //             genres: item.genres,
-                  //   //             description: item.description,
-                  //   //             poster: item.poster?.url ?? '',
-                  //   // countries: item.countries ?? [],
-                  //   //           )
-                  //
-                  //
-                  // )
-                  //         .toList()
-                  //     : [
-                  //         SizedBox(height: 150.a),
-                  //         Text('Search Star Warriors', style: context.mBlue24(fontSize: 35.a, fontWeight: FontWeight.w900)),
-                  //         SizedBox(height: 25.a),
-                  //         Center(
-                  //           child: Text(s.typingHeroName),
-                  //         ),
-                  //       ],
-              ),
+                  children: foundStarWarrior.isNotEmpty
+                      ? foundStarWarrior
+                          .map((item) =>
+
+
+                      StarWarriorCard(
+                        addWarrior: () => model.addStarWarrior(item),
+                        name: item.name ?? '',
+                        gender: item.gender ?? '',
+                        starships: item.starships,
+
+                      ),
+                  )
+                          .toList()
+                      : [
+                          SizedBox(height: 150.a),
+                          Text('Search Star Warriors', style: context.mBlue24(fontSize: 35.a, fontWeight: FontWeight.w900)),
+                          SizedBox(height: 25.a),
+                          Center(
+                            child: Text(s.typingHeroName),
+                          ),
+                        ],
+                  ),
             ],
           ),
         ),

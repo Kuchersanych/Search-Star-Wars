@@ -4,6 +4,7 @@ part of 'app_factory.dart';
 class _AppScope implements IAppScope {
   late final Dio _dio;
   late final AppRouter _router;
+  late final HiveDB _hiveDB;
 
   static final _AppScope _instance = _AppScope._();
 
@@ -15,6 +16,9 @@ class _AppScope implements IAppScope {
 
   Iterable<Interceptor> get _additionalInterceptors => [];
 
+  @override
+  IHiveDB<TypeAdapter, dynamic> get hiveDB => _hiveDB;
+
 
   /// Создайте экземпляр [_AppScope].
   _AppScope._() {
@@ -25,6 +29,7 @@ class _AppScope implements IAppScope {
   Future<void> init() async {
     _initDio();
     _initRouter();
+    _initHiveDB();
   }
 
   void _initDio() {
@@ -69,10 +74,13 @@ class _AppScope implements IAppScope {
     /// Окончательные начальные маршруты = <PageRouteInfo<dynamic>>[].
     _router.delegate();
   }
+  
+  void _initHiveDB(){
+_hiveDB = HiveDB(adapterCount: 0, adapter: StarWarriorsAdapter(), tablesName: 'StarWarriors');
+_hiveDB.init();
+  }
+  
+  
 
-  @override
-  IAppSharedPreferences get sharedPreferences => AppSharedPreferences();
 
-  @override
-  IAppSecureStorage get secureStorage => AppSecureStorage(const FlutterSecureStorage());
 }

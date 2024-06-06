@@ -2,8 +2,9 @@ import 'dart:async';
 
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:search_star_warriors/domain/entity/star_warrior.dart';
 
-abstract class HiveDB<T extends TypeAdapter, E> {
+abstract class IHiveDB<T extends TypeAdapter, E> {
 
   /// Инициализация
   Future<void> init();
@@ -18,7 +19,7 @@ abstract class HiveDB<T extends TypeAdapter, E> {
   Future<void> add(dynamic data);
 
   /// Чтение по ключу
-  Future<E?> get(dynamic key);
+  Future<E?> get({dynamic key, dynamic defaultValue});
 
   /// Чтение по [index]
   Future<E?> getAt(int index);
@@ -39,13 +40,13 @@ abstract class HiveDB<T extends TypeAdapter, E> {
   Future<void> close();
 }
 
-class HiveDBDefault<T extends TypeAdapter, E> implements HiveDB<T, E> {
+class HiveDB<T extends TypeAdapter, E> implements IHiveDB<T, E> {
   late Box<E> _box;
   final int adapterCount;
   final T adapter;
   final String tablesName;
 
-  HiveDBDefault({
+  HiveDB({
     required this.adapterCount,
     required this.adapter,
     required this.tablesName,
@@ -61,7 +62,7 @@ class HiveDBDefault<T extends TypeAdapter, E> implements HiveDB<T, E> {
   /// Регистрация адаптера
   void _registerAdapter({required int adapterCount, required T adapter}) {
     if (!Hive.isAdapterRegistered(adapterCount)) {
-      Hive.registerAdapter(adapter);
+      Hive.registerAdapter<StarWarrior>(StarWarriorsAdapter());
     }
   }
 
@@ -103,10 +104,10 @@ class HiveDBDefault<T extends TypeAdapter, E> implements HiveDB<T, E> {
   }
 
   @override
-  Future<E?> get(dynamic key) async {
+  Future<E?> get({dynamic key, dynamic defaultValue}) async {
     _box.get(key);
     _update();
-    return _box.get(key);
+    return _box.get(key, defaultValue: defaultValue);
   }
 
   @override

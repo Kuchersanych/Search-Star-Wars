@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:search_star_warriors/domain/entity/star_warrior.dart';
-import 'package:search_star_warriors/domain/repositories/films_repository.dart';
+import 'package:search_star_warriors/domain/repositories/star_warriors_repository.dart';
 import 'package:search_star_warriors/util/vm_utils.dart';
-
 
 /// Состояние [FavouritesVM]
 class FavouritesVMState {
@@ -27,7 +26,7 @@ class FavouritesVM extends VMUtils<FavouritesVMState> {
   /// Принимаемые параметры
   final BuildContext context;
 
-  ///
+  /// Репозиторий.
   late IStarWarriorsRepository _starWarriorsRepository;
 
   FavouritesVM(
@@ -36,34 +35,27 @@ class FavouritesVM extends VMUtils<FavouritesVMState> {
     required IStarWarriorsRepository starWarriorsRepository,
   }) {
     _starWarriorsRepository = starWarriorsRepository;
-    _getFilms();
-  }
+    _getFavorites();
 
-  ///
-  void _init() {
     addSubscription(
       _starWarriorsRepository.stream,
-      (event) {},
+      _subscribeStarWarriorsRepository,
     );
   }
 
-  /// Инкрементирование
-  void increment() {
-    notify(state.copyWith());
+  /// Прослушивание изменений [StarWarriorsRepository].
+  void _subscribeStarWarriorsRepository(StarWarriorsRepositoryState stateRepository) {
+    state = state.copyWith(
+      favorites: stateRepository.starWarriors,
+    );
+    notify();
   }
 
-  /// Декрементирование
-  void decrement() {
-    notify(state.copyWith());
-  }
+  /// Получение массива избранных героев.
+  Future<void> _getFavorites() async {
+    await doFuture(future: _starWarriorsRepository.getAllFavorites(), onValue: (value) {
+      notify(state.copyWith(favorites: _starWarriorsRepository.getFavorites));
+    });
 
-  /// Получение списка сохраненных фильмов.
-  Future<void> _getFilms() async {
-    // doFuture(
-    //     future: _mainService.getFilms(),
-    //     onValue: (value) {
-    //       print(value);
-    //       notify(state.copyWith(films: value));
-    //     });
   }
 }

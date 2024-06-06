@@ -59,7 +59,7 @@ class IFavouritesPage implements AutoRouteWrapper {
   @override
   Widget wrappedRoute(_) {
     return ChangeNotifierProvider(
-      create: (BuildContext context) => _diContainer._makeFilesVM(context),
+      create: (BuildContext context) => _diContainer._makeFavoritesVM(context),
       child: const FavouritesPage(),
     );
   }

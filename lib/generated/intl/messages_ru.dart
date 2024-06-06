@@ -23,14 +23,16 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "changePhoto": MessageLookupByLibrary.simpleMessage("Изменить фото"),
-        "donFilms": MessageLookupByLibrary.simpleMessage(
-            "У Вас нет сохраненных фильмов"),
+        "donHero": MessageLookupByLibrary.simpleMessage(
+            "У Вас нет сохраненных героев"),
         "favoriteYourFiles": MessageLookupByLibrary.simpleMessage(
             "Здесь появятся Ваши избранные файлы"),
         "favorites": MessageLookupByLibrary.simpleMessage("Избранное"),
         "favourites": MessageLookupByLibrary.simpleMessage("Избранное"),
         "files": MessageLookupByLibrary.simpleMessage("Файлы"),
+        "gender": MessageLookupByLibrary.simpleMessage("Гендер:"),
         "main": MessageLookupByLibrary.simpleMessage("Главная"),
+        "name": MessageLookupByLibrary.simpleMessage("Имя:"),
         "pointsWatchingVideo": MessageLookupByLibrary.simpleMessage(
             "Получите баллы, просмотрев рекламный ролик!"),
         "profile": MessageLookupByLibrary.simpleMessage("Профиль"),
@@ -42,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "searchFilm": MessageLookupByLibrary.simpleMessage("Найти фильм"),
         "serials": MessageLookupByLibrary.simpleMessage("Сериалы"),
         "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
+        "starships": MessageLookupByLibrary.simpleMessage("Звездолеты:"),
         "typingHeroName":
             MessageLookupByLibrary.simpleMessage("Начните вводить имя героя"),
         "watch": MessageLookupByLibrary.simpleMessage("Смотреть")

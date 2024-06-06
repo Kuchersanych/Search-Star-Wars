@@ -1,22 +1,21 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
-import 'package:search_star_warriors/domain/repositories/films_repository.dart';
+import 'package:search_star_warriors/domain/entity/star_warrior.dart';
+import 'package:search_star_warriors/domain/repositories/star_warriors_repository.dart';
 import 'package:search_star_warriors/domain/services/main_service.dart';
-import 'package:search_star_warriors/domain/services/user_service.dart';
 import 'package:search_star_warriors/library/adaptive/adaptive.dart';
-import 'package:search_star_warriors/library/flutter_storages/app_secure_storage.dart';
-import 'package:search_star_warriors/library/flutter_storages/app_shared_preferences.dart';
+import 'package:search_star_warriors/library/db/hive.dart';
 import 'package:search_star_warriors/ui/app/app_vm.dart';
 import 'package:search_star_warriors/ui/common/stock/stock_banner.dart';
 import 'package:search_star_warriors/ui/pages/dashboard/dashboard_page.dart';
 import 'package:search_star_warriors/ui/pages/dashboard/dashboard_vm.dart';
 import 'package:search_star_warriors/ui/pages/errors_pages/something_wrong_page.dart';
 import 'package:search_star_warriors/ui/pages/loading/loading_vm.dart';
-import 'package:search_star_warriors/ui/pages/tabs/favourites/films_page.dart';
-import 'package:search_star_warriors/ui/pages/tabs/favourites/films_vm.dart';
+import 'package:search_star_warriors/ui/pages/tabs/favourites/favorites_page.dart';
+import 'package:search_star_warriors/ui/pages/tabs/favourites/favorites_vm.dart';
 import 'package:search_star_warriors/ui/pages/tabs/main/main_vm.dart';
 import 'package:search_star_warriors/ui/pages/tabs/main/main_page.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:dio/dio.dart';
 import 'package:search_star_warriors/ui/app/app.dart';
 import 'package:flutter/material.dart';
@@ -50,10 +49,7 @@ abstract interface class IAppScope {
   AppRouter get router;
 
   /// Локльное хранилище
-  IAppSharedPreferences get sharedPreferences;
-
-  /// Защищенное локльное хранилище
-  IAppSecureStorage get secureStorage;
+  IHiveDB get hiveDB;
 }
 
 abstract class IAppFactory {

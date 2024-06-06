@@ -200,11 +200,11 @@ class AppLocalizations {
     );
   }
 
-  /// `У Вас нет сохраненных фильмов`
-  String get donFilms {
+  /// `У Вас нет сохраненных героев`
+  String get donHero {
     return Intl.message(
-      'У Вас нет сохраненных фильмов',
-      name: 'donFilms',
+      'У Вас нет сохраненных героев',
+      name: 'donHero',
       desc: '',
       args: [],
     );
@@ -215,6 +215,36 @@ class AppLocalizations {
     return Intl.message(
       'Начните вводить имя героя',
       name: 'typingHeroName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Имя:`
+  String get name {
+    return Intl.message(
+      'Имя:',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Гендер:`
+  String get gender {
+    return Intl.message(
+      'Гендер:',
+      name: 'gender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Звездолеты:`
+  String get starships {
+    return Intl.message(
+      'Звездолеты:',
+      name: 'starships',
       desc: '',
       args: [],
     );

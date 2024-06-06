@@ -24,17 +24,22 @@ part of 'app_factory.dart';
 
 class _DIContainer {
   static final _DIContainer _instance = _DIContainer._();
-  late IUserService _userService;
   late IMainService _mainService;
   late IStarWarriorsRepository _starWarriorsRepository;
 
   ///Тут объявляются хранимые свойства
   ///
   ///
+
+
   _DIContainer._() {
-    _userService = UserService();
-    _mainService = MainService(dio: _appScope.dio, sharedPreferences: _appScope.sharedPreferences);
-    _starWarriorsRepository = StarWarriorsRepository(sharedPreferences: _appScope.sharedPreferences);
+    _starWarriorsRepository = StarWarriorsRepository(hiveDB: _appScope.hiveDB);
+    _mainService = MainService(
+      dio: _appScope.dio,
+      hiveDB: _appScope.hiveDB,
+      starWarriorsRepository: _starWarriorsRepository,
+    );
+
 
     ///Тут инициализируются хранимые свойства
     ///
@@ -63,10 +68,11 @@ class _DIContainer {
         mainService: _diContainer._mainService,
       );
 
+
   ///files
-  FavouritesVM _makeFilesVM(BuildContext context) => FavouritesVM(
+  FavouritesVM _makeFavoritesVM(BuildContext context) => FavouritesVM(
         FavouritesVMState(),
         context: context,
-        starWarriorsRepository: _diContainer._starWarriorsRepository,
+        starWarriorsRepository: _starWarriorsRepository,
       );
 }
