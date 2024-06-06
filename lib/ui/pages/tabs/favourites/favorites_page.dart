@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:search_star_warriors/domain/entity/star_warrior.dart';
 import 'package:search_star_warriors/library/adaptive/adaptive.dart';
 import 'package:search_star_warriors/ui/pages/tabs/favourites/favorites_vm.dart';
-import 'package:search_star_warriors/ui/pages/tabs/main/widgets/star_warrior_card.dart';
+import 'package:search_star_warriors/ui/common/star_warrior_card.dart';
 import 'package:search_star_warriors/ui/theme/app_padding.dart';
 import 'package:search_star_warriors/ui/theme/src/theme_extension.dart';
 import 'package:search_star_warriors/util/extensions/context_extensions.dart';

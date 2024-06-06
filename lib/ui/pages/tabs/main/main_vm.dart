@@ -3,14 +3,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:search_star_warriors/domain/entity/star_warrior.dart';
 import 'package:search_star_warriors/domain/services/main_service.dart';
-import 'package:search_star_warriors/library/scaffold_manager/scaffold_manager.dart';
 import 'package:search_star_warriors/ui/common/show_action.dart';
 import 'package:search_star_warriors/util/vm_utils.dart';
 
 /// Состояние [MainVM]
 class MainState {
-  /// Статус получения данных для UI
-  late ScaffoldManagerStatus statusPageSearch;
 
   /// Массив найденных фильмов.
   final List<StarWarrior> foundStarWarrior;
@@ -19,18 +16,15 @@ class MainState {
   final bool isSearchValue;
 
   MainState({
-    this.statusPageSearch = ScaffoldManagerStatus.loaded,
     this.foundStarWarrior = const [],
     this.isSearchValue = false,
   });
 
   MainState copyWith({
-    ScaffoldManagerStatus? statusPageSearch,
     List<StarWarrior>? foundStarWarrior,
     bool? isSearchValue,
   }) {
     return MainState(
-      statusPageSearch: statusPageSearch ?? this.statusPageSearch,
       foundStarWarrior: foundStarWarrior ?? this.foundStarWarrior,
       isSearchValue: isSearchValue ?? this.isSearchValue,
     );
@@ -85,7 +79,7 @@ class MainVM extends VMUtils<MainState> {
       ));
       return;
     }
-    notify(state.copyWith(statusPageSearch: ScaffoldManagerStatus.loading));
+    notify();
     await doFuture(
         future: _mainService.getSearchStarWarrior(query),
         onValue: (value) {
@@ -99,9 +93,7 @@ class MainVM extends VMUtils<MainState> {
             context: context,
             title: m ?? 'Неизвестная ошибка',
           );
-          notify(state.copyWith(
-            statusPageSearch: ScaffoldManagerStatus.errorOther,
-          ));
+          notify(state.copyWith());
         });
     print(state.foundStarWarrior);
   }

@@ -50,126 +50,6 @@ class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  /// `Файлы`
-  String get files {
-    return Intl.message(
-      'Файлы',
-      name: 'files',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Сканер`
-  String get scanner {
-    return Intl.message(
-      'Сканер',
-      name: 'scanner',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Настройки`
-  String get settings {
-    return Intl.message(
-      'Настройки',
-      name: 'settings',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Профиль`
-  String get profile {
-    return Intl.message(
-      'Профиль',
-      name: 'profile',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Главная`
-  String get main {
-    return Intl.message(
-      'Главная',
-      name: 'main',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Недавние файлы`
-  String get recentFiles {
-    return Intl.message(
-      'Недавние файлы',
-      name: 'recentFiles',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Избранное`
-  String get favorites {
-    return Intl.message(
-      'Избранное',
-      name: 'favorites',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Найти фильм`
-  String get searchFilm {
-    return Intl.message(
-      'Найти фильм',
-      name: 'searchFilm',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Здесь появятся Ваши файлы, с которыми Вы работали в последнее время`
-  String get recentlyYourFiles {
-    return Intl.message(
-      'Здесь появятся Ваши файлы, с которыми Вы работали в последнее время',
-      name: 'recentlyYourFiles',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Здесь появятся Ваши избранные файлы`
-  String get favoriteYourFiles {
-    return Intl.message(
-      'Здесь появятся Ваши избранные файлы',
-      name: 'favoriteYourFiles',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Получите баллы, просмотрев рекламный ролик!`
-  String get pointsWatchingVideo {
-    return Intl.message(
-      'Получите баллы, просмотрев рекламный ролик!',
-      name: 'pointsWatchingVideo',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Смотреть`
-  String get watch {
-    return Intl.message(
-      'Смотреть',
-      name: 'watch',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Поиск`
   String get search {
     return Intl.message(
@@ -185,16 +65,6 @@ class AppLocalizations {
     return Intl.message(
       'Избранное',
       name: 'favourites',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Сериалы`
-  String get serials {
-    return Intl.message(
-      'Сериалы',
-      name: 'serials',
       desc: '',
       args: [],
     );
@@ -240,21 +110,21 @@ class AppLocalizations {
     );
   }
 
-  /// `Звездолеты:`
-  String get starships {
+  /// `Search Star Warriors`
+  String get searchStarWarriors {
     return Intl.message(
-      'Звездолеты:',
-      name: 'starships',
+      'Search Star Warriors',
+      name: 'searchStarWarriors',
       desc: '',
       args: [],
     );
   }
 
-  /// `Изменить фото`
-  String get changePhoto {
+  /// `Звездолеты:`
+  String get starships {
     return Intl.message(
-      'Изменить фото',
-      name: 'changePhoto',
+      'Звездолеты:',
+      name: 'starships',
       desc: '',
       args: [],
     );

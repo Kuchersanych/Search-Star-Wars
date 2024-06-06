@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:search_star_warriors/library/status_bar_manager/status_bar_manager.dart';
-import 'package:search_star_warriors/ui/theme/app_colors.dart';
 import 'package:search_star_warriors/util/vm_utils.dart';
 
 /// Состояние [DashboardVM]
@@ -37,16 +35,5 @@ class DashboardVM extends VMUtils<DashboardState> {
     notify(
       state.copyWith(currentIndex: index),
     );
-
-    switch (index) {
-      case 3:
-        StatusBarManagerHelper.setStatusBarStyle(
-          statusBarColor: AppColorsLight.white,
-        );
-      default:
-        StatusBarManagerHelper.setStatusBarStyle(
-          statusBarColor: AppColorsLight.white2,
-        );
-    }
   }
 }

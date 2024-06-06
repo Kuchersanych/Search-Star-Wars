@@ -8,9 +8,7 @@ class LoadingVM with FutureUtils {
   ///  Принимаемые параметры
   final BuildContext context;
 
-  LoadingVM(this.context) {
-
-  }
+  LoadingVM(this.context);
 
 
   void onEnd() {

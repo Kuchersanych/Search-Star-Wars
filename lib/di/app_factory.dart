@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
+import 'package:search_star_warriors/domain/config/urls.dart';
 import 'package:search_star_warriors/domain/entity/star_warrior.dart';
 import 'package:search_star_warriors/domain/repositories/star_warriors_repository.dart';
 import 'package:search_star_warriors/domain/services/main_service.dart';
@@ -17,8 +18,6 @@ import 'package:dio/dio.dart';
 import 'package:search_star_warriors/ui/app/app.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/io.dart';
-import 'package:search_star_warriors/domain/config/app_config.dart';
-import 'package:search_star_warriors/domain/config/environment/environment.dart';
 import 'package:search_star_warriors/ui/pages/loading/loading_page.dart';
 
 import '../ui/navigation/navigation.dart';

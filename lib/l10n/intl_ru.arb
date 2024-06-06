@@ -1,24 +1,11 @@
 {
   "@@locale": "ru",
-  "files": "Файлы",
-  "scanner": "Сканер",
-  "settings": "Настройки",
-  "profile": "Профиль",
-  "main": "Главная",
-  "recentFiles": "Недавние файлы",
-  "favorites": "Избранное",
-  "searchFilm": "Найти фильм",
-  "recentlyYourFiles": "Здесь появятся Ваши файлы, с которыми Вы работали в последнее время",
-  "favoriteYourFiles": "Здесь появятся Ваши избранные файлы",
-  "pointsWatchingVideo": "Получите баллы, просмотрев рекламный ролик!",
-  "watch": "Смотреть",
   "search": "Поиск",
   "favourites": "Избранное",
-  "serials": "Сериалы",
   "donHero": "У Вас нет сохраненных героев",
   "typingHeroName": "Начните вводить имя героя",
   "name": "Имя:",
   "gender": "Гендер:",
-  "starships": "Звездолеты:",
-  "changePhoto": "Изменить фото"
+  "searchStarWarriors": "Search Star Warriors",
+  "starships": "Звездолеты:"
 }

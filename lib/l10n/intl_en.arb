@@ -1,20 +1,11 @@
 {
   "@@locale": "en",
-  "files": "Files",
-  "scanner": "Scanner",
-  "settings": "Settings",
-  "profile": "Profile",
-  "main": "Main",
-  "recentFiles": "Recent files",
-  "favorites": "Favorites",
-  "searchFilm": "Search film",
-  "recentlyYourFiles": "Your files that you have worked with recently will appear here",
-  "favoriteYourFiles": "Your favorite files will appear here",
-  "pointsWatchingVideo": "Get points by watching the promotional video!",
-  "watch": "Watch",
-  "search": "Search",
-  "favourites": "Favourites",
-  "donFilms": "You don't have any saved movies",
-  "typingHeroName": "Typing the hero's name",
-  "changePhoto": "Change photo"
+  "search": "Поиск",
+  "favourites": "Избранное",
+  "donHero": "У Вас нет сохраненных героев",
+  "typingHeroName": "Начните вводить имя героя",
+  "name": "Имя:",
+  "gender": "Гендер:",
+  "searchStarWarriors": "Search Star Warriors",
+  "starships": "Звездолеты:"
 }

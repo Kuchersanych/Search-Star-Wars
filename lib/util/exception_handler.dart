@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:search_star_warriors/domain/entity/dto/dto.dart';
 import 'package:surf_logger/surf_logger.dart';
 
 /// Класс обработчик exception сущностей для презентативной логики
@@ -38,10 +37,6 @@ String? _msgError(Object error) {
     if (error.response == null) {
       return 'Ошибка сети';
     } else if (error.response!.data != null) {
-      final data = DTO.fromJson(error.response!.data as Map<String, dynamic>);
-      if (data.message != null) {
-        return data.message;
-      }
       return 'Ошибка по статус коду'; // TODO(daniil): Проработать статусы ошибок
     } else {
       return 'Ошибка по статус коду'; // TODO(daniil): Проработать статусы ошибок

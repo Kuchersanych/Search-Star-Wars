@@ -19,7 +19,6 @@ class _AppScope implements IAppScope {
   @override
   IHiveDB<TypeAdapter, dynamic> get hiveDB => _hiveDB;
 
-
   /// Создайте экземпляр [_AppScope].
   _AppScope._() {
     init();
@@ -36,35 +35,29 @@ class _AppScope implements IAppScope {
     const timeout = Duration(seconds: 30);
 
     final dio = Dio();
-    final config = Environment<AppConfig>.instance().config;
+    // final config = Environment<AppConfig>.instance().config;
 
     dio.options
-      ..baseUrl = config.url
+      ..baseUrl = 'https://swapi.dev/api/'
       ..connectTimeout = timeout
       ..receiveTimeout = timeout
       ..sendTimeout = timeout;
 
-    final client =
-        (dio.httpClientAdapter as IOHttpClientAdapter).createHttpClient?.call();
+    final client = (dio.httpClientAdapter as IOHttpClientAdapter).createHttpClient?.call();
     if (client != null) {
-      final proxyUrl = config.proxyUrl;
-      if (proxyUrl != null && proxyUrl.isNotEmpty) {
-        client
-          ..findProxy = (uri) {
-            return 'PROXY $proxyUrl';
-          }
-          ..badCertificateCallback = (_, __, ___) {
-            return true;
-          };
-      }
+      final proxyUrl = Url.baseUrl;
+
+      client
+        ..findProxy = (uri) {
+          return 'PROXY $proxyUrl';
+        }
+        ..badCertificateCallback = (_, __, ___) {
+          return true;
+        };
     }
 
     dio.interceptors.addAll(_additionalInterceptors);
 
-    if (Environment<AppConfig>.instance().isDebug) {
-      dio.interceptors
-          .add(LogInterceptor(requestBody: true, responseBody: true));
-    }
     _dio = dio;
   }
 
@@ -74,13 +67,9 @@ class _AppScope implements IAppScope {
     /// Окончательные начальные маршруты = <PageRouteInfo<dynamic>>[].
     _router.delegate();
   }
-  
-  void _initHiveDB(){
-_hiveDB = HiveDB(adapterCount: 0, adapter: StarWarriorsAdapter(), tablesName: 'StarWarriors');
-_hiveDB.init();
+
+  void _initHiveDB() {
+    _hiveDB = HiveDB(adapterCount: 0, adapter: StarWarriorsAdapter(), tablesName: 'StarWarriors');
+    _hiveDB.init();
   }
-  
-  
-
-
 }

@@ -22,26 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "changePhoto": MessageLookupByLibrary.simpleMessage("Foto ändern"),
-        "favoriteYourFiles": MessageLookupByLibrary.simpleMessage(
-            "Ihre Lieblingsdateien werden hier angezeigt"),
-        "favorites": MessageLookupByLibrary.simpleMessage("Favoriten"),
-        "favourites": MessageLookupByLibrary.simpleMessage("Favourites"),
-        "files": MessageLookupByLibrary.simpleMessage("Dateien"),
-        "main": MessageLookupByLibrary.simpleMessage("ober"),
-        "pointsWatchingVideo": MessageLookupByLibrary.simpleMessage(
-            "Sammeln Sie Punkte, indem Sie sich das Werbevideo ansehen!"),
-        "profile": MessageLookupByLibrary.simpleMessage("Profil"),
-        "recentFiles": MessageLookupByLibrary.simpleMessage("Aktuelle Dateien"),
-        "recentlyYourFiles": MessageLookupByLibrary.simpleMessage(
-            "Hier werden Ihre Dateien angezeigt, mit denen Sie kürzlich gearbeitet haben"),
-        "scanner": MessageLookupByLibrary.simpleMessage("Scanner"),
-        "search": MessageLookupByLibrary.simpleMessage("Suche"),
-        "searchFilm": MessageLookupByLibrary.simpleMessage("Einen Film finden"),
-        "serials": MessageLookupByLibrary.simpleMessage("Serien"),
-        "settings": MessageLookupByLibrary.simpleMessage("Die Einstellungen"),
+        "donHero": MessageLookupByLibrary.simpleMessage(
+            "У Вас нет сохраненных героев"),
+        "favourites": MessageLookupByLibrary.simpleMessage("Избранное"),
+        "gender": MessageLookupByLibrary.simpleMessage("Гендер:"),
+        "name": MessageLookupByLibrary.simpleMessage("Имя:"),
+        "search": MessageLookupByLibrary.simpleMessage("Поиск"),
+        "searchStarWarriors":
+            MessageLookupByLibrary.simpleMessage("Search Star Warriors"),
+        "starships": MessageLookupByLibrary.simpleMessage("Звездолеты:"),
         "typingHeroName":
-            MessageLookupByLibrary.simpleMessage("Typing the hero\'s name"),
-        "watch": MessageLookupByLibrary.simpleMessage("Suchen")
+            MessageLookupByLibrary.simpleMessage("Начните вводить имя героя")
       };
 }

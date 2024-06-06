@@ -22,25 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "changePhoto": MessageLookupByLibrary.simpleMessage("Change photo"),
-        "favoriteYourFiles": MessageLookupByLibrary.simpleMessage(
-            "Your favorite files will appear here"),
-        "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
-        "favourites": MessageLookupByLibrary.simpleMessage("Favourites"),
-        "files": MessageLookupByLibrary.simpleMessage("Files"),
-        "main": MessageLookupByLibrary.simpleMessage("Main"),
-        "pointsWatchingVideo": MessageLookupByLibrary.simpleMessage(
-            "Get points by watching the promotional video!"),
-        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
-        "recentFiles": MessageLookupByLibrary.simpleMessage("Recent files"),
-        "recentlyYourFiles": MessageLookupByLibrary.simpleMessage(
-            "Your files that you have worked with recently will appear here"),
-        "scanner": MessageLookupByLibrary.simpleMessage("Scanner"),
-        "search": MessageLookupByLibrary.simpleMessage("Search"),
-        "searchFilm": MessageLookupByLibrary.simpleMessage("Search film"),
-        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "donHero": MessageLookupByLibrary.simpleMessage(
+            "У Вас нет сохраненных героев"),
+        "favourites": MessageLookupByLibrary.simpleMessage("Избранное"),
+        "gender": MessageLookupByLibrary.simpleMessage("Гендер:"),
+        "name": MessageLookupByLibrary.simpleMessage("Имя:"),
+        "search": MessageLookupByLibrary.simpleMessage("Поиск"),
+        "searchStarWarriors":
+            MessageLookupByLibrary.simpleMessage("Search Star Warriors"),
+        "starships": MessageLookupByLibrary.simpleMessage("Звездолеты:"),
         "typingHeroName":
-            MessageLookupByLibrary.simpleMessage("Typing the hero\'s name"),
-        "watch": MessageLookupByLibrary.simpleMessage("Watch")
+            MessageLookupByLibrary.simpleMessage("Начните вводить имя героя")
       };
 }

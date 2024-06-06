@@ -22,31 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "changePhoto": MessageLookupByLibrary.simpleMessage("Изменить фото"),
         "donHero": MessageLookupByLibrary.simpleMessage(
             "У Вас нет сохраненных героев"),
-        "favoriteYourFiles": MessageLookupByLibrary.simpleMessage(
-            "Здесь появятся Ваши избранные файлы"),
-        "favorites": MessageLookupByLibrary.simpleMessage("Избранное"),
         "favourites": MessageLookupByLibrary.simpleMessage("Избранное"),
-        "files": MessageLookupByLibrary.simpleMessage("Файлы"),
         "gender": MessageLookupByLibrary.simpleMessage("Гендер:"),
-        "main": MessageLookupByLibrary.simpleMessage("Главная"),
         "name": MessageLookupByLibrary.simpleMessage("Имя:"),
-        "pointsWatchingVideo": MessageLookupByLibrary.simpleMessage(
-            "Получите баллы, просмотрев рекламный ролик!"),
-        "profile": MessageLookupByLibrary.simpleMessage("Профиль"),
-        "recentFiles": MessageLookupByLibrary.simpleMessage("Недавние файлы"),
-        "recentlyYourFiles": MessageLookupByLibrary.simpleMessage(
-            "Здесь появятся Ваши файлы, с которыми Вы работали в последнее время"),
-        "scanner": MessageLookupByLibrary.simpleMessage("Сканер"),
         "search": MessageLookupByLibrary.simpleMessage("Поиск"),
-        "searchFilm": MessageLookupByLibrary.simpleMessage("Найти фильм"),
-        "serials": MessageLookupByLibrary.simpleMessage("Сериалы"),
-        "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
+        "searchStarWarriors":
+            MessageLookupByLibrary.simpleMessage("Search Star Warriors"),
         "starships": MessageLookupByLibrary.simpleMessage("Звездолеты:"),
         "typingHeroName":
-            MessageLookupByLibrary.simpleMessage("Начните вводить имя героя"),
-        "watch": MessageLookupByLibrary.simpleMessage("Смотреть")
+            MessageLookupByLibrary.simpleMessage("Начните вводить имя героя")
       };
 }

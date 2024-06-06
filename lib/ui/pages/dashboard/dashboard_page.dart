@@ -31,12 +31,8 @@ class DashboardPage extends StatelessWidget {
       ),
       ItemTabData(
         label: s.favourites,
-        asset: Icons.movie,
+        asset: Icons.star,
       ),
-      // ItemTabData(
-      //   label: s.profile,
-      //   asset: AssetsPath.bad,
-      // ),
     ];
 
     return AutoTabsRouter(
