@@ -48,13 +48,6 @@ abstract class $AppRouter extends _i3.RootStackRouter {
         child: _i3.WrappedRoute(child: _i2.IMainPage()),
       );
     },
-    ISomethingWrongRoute.name: (routeData) {
-      final args = routeData.argsAs<ISomethingWrongRouteArgs>();
-      return _i3.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: _i3.WrappedRoute(child: _i2.ISomethingWrongPage(args.msg)),
-      );
-    },
   };
 }
 
@@ -126,33 +119,4 @@ class IMainRoute extends _i3.PageRouteInfo<void> {
   static const String name = 'IMainRoute';
 
   static const _i3.PageInfo<void> page = _i3.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i2.ISomethingWrongPage]
-class ISomethingWrongRoute extends _i3.PageRouteInfo<ISomethingWrongRouteArgs> {
-  ISomethingWrongRoute({
-    required String msg,
-    List<_i3.PageRouteInfo>? children,
-  }) : super(
-          ISomethingWrongRoute.name,
-          args: ISomethingWrongRouteArgs(msg: msg),
-          initialChildren: children,
-        );
-
-  static const String name = 'ISomethingWrongRoute';
-
-  static const _i3.PageInfo<ISomethingWrongRouteArgs> page =
-      _i3.PageInfo<ISomethingWrongRouteArgs>(name);
-}
-
-class ISomethingWrongRouteArgs {
-  const ISomethingWrongRouteArgs({required this.msg});
-
-  final String msg;
-
-  @override
-  String toString() {
-    return 'ISomethingWrongRouteArgs{msg: $msg}';
-  }
 }

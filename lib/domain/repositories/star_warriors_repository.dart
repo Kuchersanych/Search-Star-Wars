@@ -72,6 +72,7 @@ class StarWarriorsRepository implements IStarWarriorsRepository {
     List<StarWarrior> list = await currentWarriors.cast<StarWarrior>();
     _state = _state.copyWith(starWarriors: list);
     _update();
+
   }
 
   final StreamController<StarWarriorsRepositoryState> _streamController =

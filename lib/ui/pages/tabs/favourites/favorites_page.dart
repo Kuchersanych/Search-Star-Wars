@@ -26,13 +26,13 @@ class FavouritesPage extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: 50.a),
-              if(favorites.isEmpty)
+              if(favorites.isNotEmpty)
               Text(
                 s.favourites,
                 style: context.mBlue24(fontSize: 30.a, fontWeight: FontWeight.w600),
               ),
               Column(
-                  children: !favorites.isNotEmpty
+                  children: favorites.isNotEmpty
                       ? favorites
                           .map(
                             (item) => StarWarriorCard(

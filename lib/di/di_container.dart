@@ -27,11 +27,6 @@ class _DIContainer {
   late IMainService _mainService;
   late IStarWarriorsRepository _starWarriorsRepository;
 
-  ///Тут объявляются хранимые свойства
-  ///
-  ///
-
-
   _DIContainer._() {
     _starWarriorsRepository = StarWarriorsRepository(hiveDB: _appScope.hiveDB);
     _mainService = MainService(
@@ -39,11 +34,6 @@ class _DIContainer {
       hiveDB: _appScope.hiveDB,
       starWarriorsRepository: _starWarriorsRepository,
     );
-
-
-    ///Тут инициализируются хранимые свойства
-    ///
-    ///
   }
 
   /// app
@@ -68,8 +58,7 @@ class _DIContainer {
         mainService: _diContainer._mainService,
       );
 
-
-  ///files
+  ///favorites
   FavouritesVM _makeFavoritesVM(BuildContext context) => FavouritesVM(
         FavouritesVMState(),
         context: context,

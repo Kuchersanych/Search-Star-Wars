@@ -6,7 +6,6 @@ import '../navigation.gr.dart';
 abstract class AppRootRoutes{
   static const empty = AppRouteModel(path: '/empty', name: EmptyRouter.name, page: EmptyRouter.page),
       loading = AppRouteModel(path: 'loading', name: ILoadingRoute.name, page: ILoadingRoute.page),
-      somethingWrong = AppRouteModel(path: 'something_wrong', name: ISomethingWrongRoute.name, page: ISomethingWrongRoute.page),
   dashboard = AppRouteModel(path: 'dashboard', name: IDashboardRoute.name, page: IDashboardRoute.page);
 }
 

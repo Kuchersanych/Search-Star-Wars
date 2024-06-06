@@ -4,13 +4,10 @@ import 'package:provider/provider.dart';
 import 'package:search_star_warriors/domain/entity/star_warrior.dart';
 import 'package:search_star_warriors/domain/repositories/star_warriors_repository.dart';
 import 'package:search_star_warriors/domain/services/main_service.dart';
-import 'package:search_star_warriors/library/adaptive/adaptive.dart';
 import 'package:search_star_warriors/library/db/hive.dart';
 import 'package:search_star_warriors/ui/app/app_vm.dart';
-import 'package:search_star_warriors/ui/common/stock/stock_banner.dart';
 import 'package:search_star_warriors/ui/pages/dashboard/dashboard_page.dart';
 import 'package:search_star_warriors/ui/pages/dashboard/dashboard_vm.dart';
-import 'package:search_star_warriors/ui/pages/errors_pages/something_wrong_page.dart';
 import 'package:search_star_warriors/ui/pages/loading/loading_vm.dart';
 import 'package:search_star_warriors/ui/pages/tabs/favourites/favorites_page.dart';
 import 'package:search_star_warriors/ui/pages/tabs/favourites/favorites_vm.dart';
@@ -29,8 +26,6 @@ import '../ui/navigation/navigation.dart';
 part 'app_scope.dart';
 
 part 'screen_factory.dart';
-
-part 'widget_factory.dart';
 
 part 'di_container.dart';
 
@@ -59,12 +54,6 @@ abstract class IAppFactory {
 class _AppFactory implements IAppFactory {
   _AppFactory() {
     _appScope = _AppScope._instance;
-    // Раскоментировать после реализации
-    // fireBaseInit();
-  }
-
-  Future<void> fireBaseInit() {
-    throw UnimplementedError();
   }
 
   @override

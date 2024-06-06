@@ -41,18 +41,6 @@ class ILoadingPage implements AutoRouteWrapper {
 }
 
 @RoutePage()
-class ISomethingWrongPage implements AutoRouteWrapper {
-  const ISomethingWrongPage(this.msg);
-
-  final String msg;
-
-  @override
-  Widget wrappedRoute(_) {
-    return SomethingWrongPage(msg: msg);
-  }
-}
-
-@RoutePage()
 class IFavouritesPage implements AutoRouteWrapper {
   const IFavouritesPage();
 
