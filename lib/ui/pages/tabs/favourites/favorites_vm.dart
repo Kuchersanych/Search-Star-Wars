@@ -5,7 +5,7 @@ import 'package:search_star_warriors/util/vm_utils.dart';
 
 /// Состояние [FavouritesVM]
 class FavouritesVMState {
-  /// Сохраненные файлы.
+  /// Массив сохраненных героев.
   final List<StarWarrior> favorites;
 
   FavouritesVMState({
@@ -56,6 +56,5 @@ class FavouritesVM extends VMUtils<FavouritesVMState> {
     await doFuture(future: _starWarriorsRepository.getAllFavorites(), onValue: (value) {
       notify(state.copyWith(favorites: _starWarriorsRepository.getFavorites));
     });
-
   }
 }

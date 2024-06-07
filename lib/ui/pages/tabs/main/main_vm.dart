@@ -12,20 +12,26 @@ class MainState {
   /// Массив найденных героев.
   final List<StarWarrior> foundStarWarrior;
 
+  /// Массив сохраненных героев.
+  final List<StarWarrior> favorites;
+
   /// Введен ли текст в поле поиска.
   final bool isSearchValue;
 
   MainState({
+    this.favorites = const [],
     this.foundStarWarrior = const [],
     this.isSearchValue = false,
   });
 
   MainState copyWith({
     List<StarWarrior>? foundStarWarrior,
+    List<StarWarrior>? favorites,
     bool? isSearchValue,
   }) {
     return MainState(
       foundStarWarrior: foundStarWarrior ?? this.foundStarWarrior,
+      favorites: favorites ?? this.favorites,
       isSearchValue: isSearchValue ?? this.isSearchValue,
     );
   }
@@ -48,7 +54,7 @@ class MainVM extends VMUtils<MainState> {
   }) {
     _starWarriorsRepository = starWarriorsRepository;
     _mainService = mainService;
-
+    _getFavorites();
   }
 
   /// Таймер задержки отправки запроса при вводе текста.
@@ -100,19 +106,28 @@ class MainVM extends VMUtils<MainState> {
         });
   }
 
-  void addStarWarrior(StarWarrior starWarrior) {
-    _mainService.addStarWarrior(starWarrior);
+  /// Получение массива избранных героев.
+  Future<void> _getFavorites() async {
+    await doFuture(future: _starWarriorsRepository.getAllFavorites(), onValue: (value) {
+      notify(state.copyWith(favorites: _starWarriorsRepository.getFavorites));
+    });
   }
-
-  void _checkFavorite(List<StarWarrior> value) {
+/// Добавление героя в избранное.
+  void addStarWarrior(StarWarrior starWarrior) {
+    starWarrior.isFavorite = true;
+    _mainService.addStarWarrior(starWarrior);
+    _checkFavorite(state.foundStarWarrior);
+  }
+/// Проверка полученных данных на совпадение в сохраненных данных.
+  void _checkFavorite(List<StarWarrior> search) {
     List<StarWarrior> favorites = _starWarriorsRepository.getFavorites;
     for (var i in favorites) {
-      for (var e in value) {
+      for (var e in search) {
         if (i.name == e.name) {
           e.isFavorite = true;
         }
       }
     }
-    notify(state.copyWith(foundStarWarrior: value));
+    notify(state.copyWith(foundStarWarrior: search));
   }
 }
