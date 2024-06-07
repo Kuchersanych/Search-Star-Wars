@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:search_star_warriors/domain/entity/star_warrior.dart';
 import 'package:search_star_warriors/library/adaptive/adaptive.dart';
 import 'package:search_star_warriors/ui/common/app_card.dart';
 import 'package:search_star_warriors/ui/common/buttons/app_button.dart';
@@ -9,9 +10,7 @@ class StarWarriorCard extends StatelessWidget {
   /// Карточка героя.
   const StarWarriorCard({
     required this.addWarrior,
-    required this.name,
-    this.starships = const [],
-    required this.gender,
+    required this.warrior,
     this.isShowButtonSave = true,
     super.key,
   });
@@ -19,14 +18,10 @@ class StarWarriorCard extends StatelessWidget {
   /// Добавление в избранное.
   final VoidCallback addWarrior;
 
-  /// Имя героя.
-  final String name;
+  /// Герой.
+  final StarWarrior warrior;
 
-  /// Массив звездолетов.
-  final List<String>? starships;
-
-  /// Гендер героя.
-  final String gender;
+  /// Флаг показа кнопки.
   final bool isShowButtonSave;
 
   @override
@@ -46,21 +41,22 @@ class StarWarriorCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    name,
+                    warrior.name,
                     maxLines: 2,
                     style: context.mBlack18(),
                   ),
                   SizedBox(height: 10.a),
-                  Text('${s.gender} $gender', style: context.mBlack14()),
+                  Text('${s.gender} ${warrior.gender}', style: context.mBlack14()),
                   SizedBox(height: 10.a),
-                  Text('${s.starships} ${starships?.length ?? 0} ', style: context.mBlue14()),
+                  Text('${s.starships} ${warrior.starships.length} ', style: context.mBlue14()),
                   SizedBox(height: 10.a),
                   Visibility(
                     visible: isShowButtonSave,
                     child: AppButton(
-                      text: 'Сохранить',
-                      onTap: addWarrior,
-                      color: context.theme.focusedBorderColor,
+                      text: s.save,
+                      onTap: warrior.isFavorite ? (){} : addWarrior,
+                      color:
+                          warrior.isFavorite ? context.theme.dividerColor : context.theme.focusedBorderColor,
                     ),
                   )
                 ],

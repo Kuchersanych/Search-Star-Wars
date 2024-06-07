@@ -120,6 +120,16 @@ class AppLocalizations {
     );
   }
 
+  /// `Сохранить`
+  String get save {
+    return Intl.message(
+      'Сохранить',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Звездолеты:`
   String get starships {
     return Intl.message(

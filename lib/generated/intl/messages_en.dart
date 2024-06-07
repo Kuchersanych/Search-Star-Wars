@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "favourites": MessageLookupByLibrary.simpleMessage("Избранное"),
         "gender": MessageLookupByLibrary.simpleMessage("Гендер:"),
         "name": MessageLookupByLibrary.simpleMessage("Имя:"),
+        "save": MessageLookupByLibrary.simpleMessage("Сохранить"),
         "search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "searchStarWarriors":
             MessageLookupByLibrary.simpleMessage("Search Star Warriors"),

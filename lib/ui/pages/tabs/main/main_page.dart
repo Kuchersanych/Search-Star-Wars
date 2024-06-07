@@ -11,7 +11,7 @@ import 'package:search_star_warriors/util/extensions/context_extensions.dart';
 import '../../../common/star_warrior_card.dart';
 
 class MainPage extends StatelessWidget {
-  /// Пример описания виджета
+  /// Главный экран.
   const MainPage({super.key});
 
   @override
@@ -46,9 +46,7 @@ class MainPage extends StatelessWidget {
                         .map(
                           (item) => StarWarriorCard(
                             addWarrior: () => model.addStarWarrior(item),
-                            name: item.name ?? '',
-                            gender: item.gender ?? '',
-                            starships: item.starships,
+                            warrior: item,
                           ),
                         )
                         .toList()
@@ -57,9 +55,7 @@ class MainPage extends StatelessWidget {
                         Text(s.searchStarWarriors,
                             style: context.mBlue24(fontSize: 35.a, fontWeight: FontWeight.w900)),
                         SizedBox(height: 25.a),
-                        Center(
-                          child: Text(s.typingHeroName),
-                        ),
+                        Center(child: Text(s.typingHeroName)),
                       ],
               ),
             ],

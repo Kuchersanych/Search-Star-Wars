@@ -2,14 +2,14 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:search_star_warriors/domain/entity/star_warrior.dart';
+import 'package:search_star_warriors/domain/repositories/star_warriors_repository.dart';
 import 'package:search_star_warriors/domain/services/main_service.dart';
 import 'package:search_star_warriors/ui/common/show_action.dart';
 import 'package:search_star_warriors/util/vm_utils.dart';
 
 /// Состояние [MainVM]
 class MainState {
-
-  /// Массив найденных фильмов.
+  /// Массив найденных героев.
   final List<StarWarrior> foundStarWarrior;
 
   /// Введен ли текст в поле поиска.
@@ -33,9 +33,9 @@ class MainState {
 
 /// Управление состоянием [MainPage]
 class MainVM extends VMUtils<MainState> {
-  /// Принимаемые параметры.
   late BuildContext context;
   late IMainService _mainService;
+  late IStarWarriorsRepository _starWarriorsRepository;
 
   /// Контроллер поля поиска.
   late TextEditingController searchController;
@@ -44,11 +44,14 @@ class MainVM extends VMUtils<MainState> {
     super.initialState, {
     required this.context,
     required IMainService mainService,
+    required IStarWarriorsRepository starWarriorsRepository,
   }) {
+    _starWarriorsRepository = starWarriorsRepository;
     _mainService = mainService;
+
   }
 
-  /// Таймер для
+  /// Таймер задержки отправки запроса при вводе текста.
   Timer? _timer;
 
   @override
@@ -79,12 +82,12 @@ class MainVM extends VMUtils<MainState> {
       ));
       return;
     }
-    notify();
     await doFuture(
         future: _mainService.getSearchStarWarrior(query),
         onValue: (value) {
+          _checkFavorite(value);
           notify(state.copyWith(
-            foundStarWarrior: value,
+
             isSearchValue: true,
           ));
         },
@@ -95,14 +98,21 @@ class MainVM extends VMUtils<MainState> {
           );
           notify(state.copyWith());
         });
-    print(state.foundStarWarrior);
   }
 
   void addStarWarrior(StarWarrior starWarrior) {
     _mainService.addStarWarrior(starWarrior);
   }
 
-  void getAllFavorites() {
-    _mainService.getAllFavorites();
+  void _checkFavorite(List<StarWarrior> value) {
+    List<StarWarrior> favorites = _starWarriorsRepository.getFavorites;
+    for (var i in favorites) {
+      for (var e in value) {
+        if (i.name == e.name) {
+          e.isFavorite = true;
+        }
+      }
+    }
+    notify(state.copyWith(foundStarWarrior: value));
   }
 }

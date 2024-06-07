@@ -2,19 +2,22 @@ import 'package:hive/hive.dart';
 
 class StarWarrior {
   StarWarrior({
-    this.name,
-    this.gender,
-    this.starships,
+    required this.name,
+    required this.gender,
+    required this.starships,
+    required this.isFavorite,
   });
 
-  late final String? name;
-  late final String? gender;
-  late final List<String>? starships;
+  late final String name;
+  late final String gender;
+  late final List<String> starships;
+  late bool isFavorite;
 
   StarWarrior.fromJson(Map<String, dynamic> json) {
-    name = json['name'];
-    gender = json['gender'];
+    name = json['name'] ?? '';
+    gender = json['gender'] ?? '';
     starships = List.castFrom<dynamic, String>(json['starships']);
+    isFavorite = false;
   }
 }
 
@@ -32,6 +35,7 @@ class StarWarriorsAdapter extends TypeAdapter<StarWarrior> {
       name: name,
       gender: gender,
       starships: starships,
+      isFavorite: true,
     );
   }
 

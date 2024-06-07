@@ -1,6 +1,6 @@
 # Проект сканера
 
-Проект сканера документов "Scan My".
+Проект тестового задания "Search Star Warriors".
 
 ### Требования
 
@@ -18,7 +18,9 @@
 - assets
     - fonts
     - icons_png
-    - icons_svg
+        - 2.0x
+        - 3.0x
+        - 4.0x
     - images
         - 2.0x
         - 3.0x
@@ -37,7 +39,7 @@
     - library
         - adaptive
         - db
-        - flutter_storages
+        - status_bar_manager
     - ui
         - app
         - common
@@ -62,16 +64,15 @@
 - id - контейнеры внедрения зависимостей.
 - domain - содержит:
     - config - конфигурация приложения.
-        - environment - Конфигурация среды.
     - entity - бизнес модели данных.
-    - repositories -
+    - repositories -репозитории.
     - services - бизнес логика.
 - generated - автоматически сгенерированные dart файлы локализации.
 - l10n - arb файлы локализации.
 - library
     - adaptive - библиотека адаптации размеров UI.
-    - db - содержит DB, secure_storage, shared_preferences.
-        - flutter_storages - реализация secure_storage, shared_preferences.
+    - db - содержит DB.
+        - status_bar_manager - менеджер управления состоянием нативных элементов.
 - ui
     - app - корневой виджет проекта.
     - common - переиспользуемые виджеты.
@@ -95,20 +96,8 @@
 
 Для внедрения лолкализации используется [плагин](https://plugins.jetbrains.com/plugin/13666-flutter-intl).
 
-При неправильной генерации файлов (если генерит не null-safety):
-
-```
-flutter pub global deactivate intl_utils
-flutter pub global activate intl_utils 2.6.1
-flutter pub global run intl_utils:generate
-```
-
-### Аналитика
-AppMetrica
-
-##### Подключены:
-
 ### Архитектура
 MVVM
 
 ### DI
+DIContainer

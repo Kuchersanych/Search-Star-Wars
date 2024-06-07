@@ -15,10 +15,10 @@ class Splash extends StatefulWidget {
     this.durationSec = 4,
   });
 
-  /// Действие по оканчанию анимации
+  /// Действие по оканчанию анимации.
   final VoidCallback onEnd;
 
-  /// Продолжительность анимаций
+  /// Продолжительность анимаций.
   final int durationSec;
 
   @override

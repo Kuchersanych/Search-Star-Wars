@@ -37,9 +37,7 @@ class FavouritesPage extends StatelessWidget {
                           .map(
                             (item) => StarWarriorCard(
                               addWarrior: () {},
-                              name: item.name ?? '',
-                              gender: item.gender ?? '',
-                              starships: item.starships,
+                              warrior: item,
                              isShowButtonSave: false,
                             ),
                           )

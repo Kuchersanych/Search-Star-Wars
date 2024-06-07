@@ -56,6 +56,7 @@ class _DIContainer {
         MainState(),
         context: context,
         mainService: _diContainer._mainService,
+        starWarriorsRepository: _starWarriorsRepository,
       );
 
   ///favorites

@@ -35,9 +35,6 @@ mixin FutureUtils {
       } else {
         final msg = ExceptionHandler.shellException(e, trace);
         if(msg != null) {
-
-          ///TODO Отправка сообщения об ошибке в аналитику
-          print(msg);
         }
       }
 
