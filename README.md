@@ -8,11 +8,6 @@
 
 ### Инициализация
 
-При инициализации проекта нужно:
-
-1. Найти по поиску flutter_template и в нужных местах заменить на название вашего проекта.
-2. Проинициализировать FirebaseCrashlytics(найти можно через TODO(init-project)).
-
 ### Структура
 
 - assets
@@ -30,7 +25,6 @@
     - id
     - domain
         - config
-            - environment
         - entity
         - repositories
         - services
