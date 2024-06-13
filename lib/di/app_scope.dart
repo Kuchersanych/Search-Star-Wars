@@ -1,6 +1,6 @@
 part of 'app_factory.dart';
 
-/// Область зависимостей, которые необходимы на протяжении всего жизненого цикла приложения.
+/// Зависимости, которые необходимы на протяжении всего жизненого цикла приложения.
 class _AppScope implements IAppScope {
   late final Dio _dio;
   late final AppRouter _router;

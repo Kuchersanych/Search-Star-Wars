@@ -51,7 +51,7 @@ class AppVM extends VMUtils<AppState> {
     notify(state.copyWith(locale: locale));
   }
 
-  /// Установка локализации, согдасно локализации устройства
+  /// Установка локализации, согласно локализации устройства
   void resetLocale() {
     state.locale = null;
     notify();

@@ -11,7 +11,7 @@ abstract class AppRootRoutes{
 
 /// Вложенные навигационные роуты приложения
 abstract class AppNestedRoutes{
-  static const files = AppRouteModel(path: 'files', name: IFavouritesRoute.name, page: IFavouritesRoute.page),
+  static const favorites = AppRouteModel(path: 'favorites', name: IFavouritesRoute.name, page: IFavouritesRoute.page),
   main = AppRouteModel(path: 'main', name: IMainRoute.name, page: IMainRoute.page);
 
 }

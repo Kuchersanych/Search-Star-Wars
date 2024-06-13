@@ -28,8 +28,8 @@ class AppRouter extends $AppRouter {
               page: AppRootRoutes.dashboard.page,
               children: [
                 AutoRoute(
-                  path: AppNestedRoutes.files.path,
-                  page: AppNestedRoutes.files.page,
+                  path: AppNestedRoutes.favorites.path,
+                  page: AppNestedRoutes.favorites.page,
                 ),
                 AutoRoute(
                   path: AppNestedRoutes.main.path,
