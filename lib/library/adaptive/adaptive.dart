@@ -13,7 +13,6 @@ part 'src/extensions.dart';
 
 typedef AdaptiveBuilder = Widget Function(BuildContext);
 
-///
 class Adaptive extends StatelessWidget {
   Adaptive({
     super.key,
@@ -23,7 +22,6 @@ class Adaptive extends StatelessWidget {
     _notifier = ValueNotifier(state);
   }
 
-  ///
   final AdaptiveBuilder builder;
 
   @override

@@ -8,7 +8,7 @@ class SplashHelper {
   static late AnimationController controller;
   static late Animation<double> animation;
 
-  /// Действие при и нициализации [SplashHelper]
+  /// Действие при инициализации [SplashHelper]
   static void init() {
     _notifier = ValueNotifier(SplashState());
   }
